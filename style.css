@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    color: #222;
+    line-height: 1.5em;
+    font-weight: 300;
+    margin: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+a {
+    color: #222;
+    text-decoration: none;
+}
+
+.gnb {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+    padding: 50px 30px;
+    display: flex;
+}
+
+/* 낮은 브라우저 다른 브라우저에서 모두 통하는 전통적 방법을 사용할 때는 display: inline-block 사용하여 가로배치*/
+.gnb li {
+    /* 방법1 */
+    /* float: left;
+    width: 120px;
+    box-sizing: border-box;
+    text-align: center; */
+
+    /* 방법2 */
+    /* .gnb에 flex를 준뒤 .gnb li에 아래와 같이 함 */
+    /* flex는 숫자 아무거나 줘도 됨 */
+    flex: 1;
+    text-align: center;
+}
+
+.gnb li a {
+    font-size: 14px;
+    position: relative;
+}
+
+.gnb li a:before {
+    content: "";
+    position: absolute;
+    background-color: dodgerblue;
+    height: 2px;
+    width: 0;
+    bottom: -10px;
+    transition: 0.5s;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gnb li a:hover:before {
+    width: 100%;
+}
